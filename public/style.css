@@ -1,0 +1,116 @@
+@charset "utf-8";
+/*============= 项目特有样式 =============*/
+
+/* 主色调在style里声明 */
+/* 行高默认20px */
+/* 总背景色 #f0f2f5 */
+
+/* 标签栏 */
+.nav{position:fixed;bottom:0;left:0;z-index:5;width:100%;height:56px;background-color:#fff;color:#999;-webkit-backface-visibility:hidden;backface-visibility:hidden;}
+.nav li{position:relative;float:left;padding:8px 0 6px 0;width:20%;text-align:center;}
+.nav li div{font-size:10px;line-height:16px;}
+.nav_tip{position:absolute;right:16%;top:6px;width:16px;height:16px;line-height:16px;font-size:10px;font-weight:bold;}
+.nav_color{color:#333c4f;}
+.nav svg{font-size:24px;}
+
+/* 导航栏 */
+.header{position:fixed;top:0;left:0;z-index:10;padding-top:24px;width:100%;height:68px;line-height:44px;backface-visibility:hidden;}
+.header{background-color:#fafafa;}/* 默认背景色 */
+.header_white{background-color:#fff;}
+
+/* 工具栏 */
+.tool,.tool_full{position:fixed;bottom:0;left:0;z-index:5;padding:8px 0;width:100%;height:50px;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-box-shadow:1px 1px 0 -1px rgba(0, 0, 0, 0.5);}
+.tool_full{padding:0;height:44px;}
+
+
+/* 范围栏 */
+.scope{position:relative;}
+.scope_fixed{position:fixed;top:64px;left:0;z-index:6;width:100%;height:44px;}
+.scope_list{display:none;position:absolute;top:88px;left:0;z-index:6;width:100%;background-color:#fff;}
+
+.scope_box{position: fixed;top: 114px;left: 0;z-index: 7;width: 100%;}
+.scope_box ~ .modal{position: fixed;top: 114px;z-index:6;}
+.scope_box > li{width: 100%;background-color: #fff;overflow: scroll;animation: am_fadeIn .2s ease forwards;}
+.scope_box > li:nth-child(2){max-height:400px;}
+
+/* 主内容区 */
+.content{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;overflow:auto;-webkit-overflow-scrolling:touch;}
+.index_content{padding:48px 0 60px 0;}/* A类页面主体框 */
+.header~.content{top:68px;}
+.scope_fixed~.content{top:108px;}
+.nav~.content{bottom:56px;}
+.tool~.content{bottom:52px;}
+.tool_full~.content{bottom:44px;}
+#navList .content{bottom:56px;}/* 首页A类页面 */
+.content1{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;overflow:auto;-webkit-overflow-scrolling:touch;}
+.noflow{overflow:hidden;}/* content 禁止滚动,用于滚动插件 */
+#phoenixPage_index .content{bottom:56px;}
+
+.content_b44~.content{bottom:44px;}
+.content_b48~.content{bottom:48px;}
+.content_b52~.content{bottom:52px;}
+.content_b56~.content{bottom:56px;}
+.content_b104~.content{bottom:104px;}
+
+/* content */
+.content_loading{position:absolute;top:0;left:0;z-index:4;padding-top:45%;width:100%;height:100%;background-color:#f0f2f5;}
+
+/* no */
+.no_box{padding-top:35%;width:100%;height:100%;text-align:center;}
+.no_icon{margin:10px auto;display:block;overflow:hidden;width:120px;height:120px;text-align:center;background:rgba(235,237,240,1);}
+.no_icon i{font-size:84px;line-height:120px;color:#ddd;}
+.no_btn{padding-top:20px;}
+.no_btn span{padding:10px 20px;}
+
+.tab dt div{position:relative;}
+.tab dt{color:#999;background-color:#fafafa;}/* tab背景色*/
+.tab dt .nav_selected{color:#ccc;}/* tab切换选中的样式 */
+.tab dt span{position:absolute;bottom:0;left:30%;width:40%;height:3px;}
+
+/*################### 项目自定义样式区 ##############*/
+
+/* 项目主色设定 */
+.color{color:#4b96f9;}
+.back{background-color:#4b96f9;color:#fff;}
+.border_color::after{border-color:#4b96f9;}
+.btn{background-image:linear-gradient(45deg,#4b96f9,#4b96f9);color:#fff;}
+.tab dt span{background-color:#4b96f9}
+
+
+/* 商城 */
+.animationIn{animation: am_fadeInBottom .3s ease forwards;}
+.animationOut{animation: am_fadeOutBottom .4s ease forwards;}
+.shop_SKU{position:fixed;bottom:44px;left:0;width:100%;height:100%;}
+.shop_SKU_box{position: absolute;bottom:0;left: 0;overflow:scroll;padding:10px;width: 100%;height:400px;background-color: #fff;}
+.shop_SKU_list_box li{display:inline-block;}
+.has_not_goods{pointer-events: none;opacity: .45;-box-shadow: none;cursor: none;}
+.closePluginIcon{position:absolute;right:0px;top:0px;text-align:center;line-height:44px;width:44px;height:44px;}
+.num_box{width:150px;}
+.prompt{line-height:44px;text-align:center;width:80%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:#fff;border-radius:4px;animation:am_fadeIn .3s ease forwards}
+.prompt_error{line-height:36px;color:red}
+.prompt_input{padding:0 16px}
+.prompt_input input{margin:10px 0;padding:10px;width:100%;height:40px;border:1px solid #eee;border-radius:4px}
+.prompt_input input::-webkit-input-placeholder{color:#bbb;font-weight:400}
+
+.line_through{text-decoration:line-through}
+.scan_btn{flex-direction:column;background-image: url(../images/bg_scan_btn.png);background-repeat: no-repeat;}
+.order_tips{ position: absolute; right: -3px; top: -6px; z-index: 2; width: 8px; height: 8px;}
+.home_goods_box{background-image: url(../images/bg_goods2.png);background-repeat: no-repeat;}
+.home_goods_list{background-image: url(../images/bg_goods1.png);background-repeat: no-repeat;margin-top: -9px;}
+
+
+
+/* 进度条动画 */
+
+.projectAn{
+    animation: project .6s forwards;
+}
+
+@keyframes project{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}

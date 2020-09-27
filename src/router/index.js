@@ -1,22 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import home from '../components/home.vue'//主页
+import company from '../components/company/company.vue';//公司
+
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 Vue.use(VueRouter)
 
+// 首页路径
 const routes = [
+  // 主页路由
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/home',
+    component: home
   },
+  // 公司路由
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/company',
+    component: company,
+    meta: {
+      keepAlive: true //缓存页面
+    }
   }
 ]
 
