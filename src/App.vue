@@ -31,7 +31,7 @@
 export default {
   data() {
     return {
-      indexPageName: 'home',
+      indexPageName: 'home', //首页路径
       activeIndex: 0, //当前激活的index tab
       beforeIndex: 0,//之前激活的index tab
       // tab顶部标签数据栏
@@ -100,6 +100,7 @@ export default {
       return item.url == this.indexPageName;
     });
     this.tabsData[index].isCheck = true;
+    this.activeIndex = index;
     this.$router.push({ path: this.tabsData[index].url });//跳转路由
   },
 }
