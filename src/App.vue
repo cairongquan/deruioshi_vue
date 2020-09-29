@@ -2,11 +2,11 @@
   <div>
     <!-- 路由占位符 -->
     <keep-alive>
-      　　<router-view v-if="$route.meta.keepAlive"></router-view>
+      <router-view v-if="$route.meta.keepAlive" class="mb100"></router-view>
     </keep-alive>
-
     <!-- 不需要缓存 -->
-    <router-view v-if="!$route.meta.keepAlive"></router-view>
+    <router-view class="mb100" v-if="!$route.meta.keepAlive"></router-view>
+
     <!-- 顶部tab -->
     <div class="bottomTabs" style="z-index: 999">
       <ul class="border nav border_t">
@@ -93,6 +93,16 @@ export default {
       this.$router.push({ path: this.tabsData[index].url });//跳转路由
     }
   },
+  watch: {
+    $route(to, from) {
+      if (to.meta.type != 1) { //前往B类界面
+        document.querySelector('.bottomTabs').style.display = 'none';
+      }
+      else {
+        document.querySelector('.bottomTabs').style.display = 'block';
+      }
+    }
+  },
 
   // 初始化界面 
   beforeMount() {
@@ -102,6 +112,7 @@ export default {
     this.tabsData[index].isCheck = true;
     this.activeIndex = index;
     this.$router.push({ path: this.tabsData[index].url });//跳转路由
+
   },
 }
 </script>
@@ -114,5 +125,9 @@ export default {
   position: fixed;
   height: 56px;
   display: flex;
+}
+
+.mb100 {
+  margin-bottom: 56px;
 }
 </style>

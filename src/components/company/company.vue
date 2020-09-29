@@ -2,7 +2,7 @@
   <!-- 公司主页 -->
   <div>
     <!--头部区域-->
-    <header-a :title="公司简介"></header-a>
+    <header-a>公司简介 </header-a>
     <!--主体内容区域-->
     <div class="content">
       <div class="mt10 bg_white contnetMainBox f18 p10 lh30">
